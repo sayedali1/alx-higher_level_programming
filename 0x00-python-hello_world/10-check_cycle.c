@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 
-		for (; node != NULL && node->next != NULL;)
+		for (; node != NULL && node2 != NULL;)
 		{
 			node = node->next->next;
 			node2 = node2->next;
