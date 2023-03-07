@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def islower(c):
     asc_c = ord(c)
 
