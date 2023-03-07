@@ -4,9 +4,9 @@ number = random.randint(-10000, 10000)
 print("Last digit of {:d} is".format(number), end=" ")
 # check if the number is negative or not
 if number < 0:
-    lastDigit = -int(str(number)[-1])   # get the last digit
+    lastDigit = number % -10  # get the last digit
 else:
-    lastDigit = int(str(number)[-1])
+    lastDigit = number % 10
 # check the conditions
 if lastDigit == 0:
     print(f"{lastDigit:d} and is 0")
