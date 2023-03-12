@@ -11,6 +11,8 @@ int is_palindrome(listint_t **head)
 	unsigned int len = 0, i = 0;
 	int *data;
 
+	if (head == NULL)
+		return (0);
 	if (*head == NULL) /* empty list is palindrome */
 		return (1);
 
