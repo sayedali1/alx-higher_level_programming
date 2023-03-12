@@ -43,12 +43,11 @@ int is_palindrome(listint_t **head)
 	listint_t *temp = *head, *first_half = NULL, *sec_half = NULL, *temp2 = NULL;
 	int i, len;
 
-	if (head == NULL)
-		return (0);
-
 	if (*head == NULL)
 		return (1);
 	len = list_len(*head);
+	if (len == 1)
+		return (1);
 	if (len % 2 != 0) /* if not even list */
 		return (0);
 	temp = *head;
