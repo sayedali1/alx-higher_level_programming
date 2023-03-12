@@ -1,78 +1,44 @@
 #include "lists.h"
-#include<stdio.h>
+#include <stdlib.h>
 /**
- * list_len - fun that get the len of a list
- * @head:pointer the first element of a list
- * Return: len of the list
+ * is_palindrome - check if a list is palindrome
+ * @head: pointer to head of singly linked list
+ * Return: 1 if palindrome, 0 otherwise
  */
-int list_len(listint_t *head)
-{
-	listint_t *temp = head;
-	int i;
-
-	for (i = 1; temp->next != NULL; i++)
-		temp = temp->next;
-	return (i);
-}
-
-/**
- * reverse_listint - fun that reverse linked list
- * @head: pointer to the first node of linked list
- * Return: pointer to the header
- */
-listint_t *reverse_listint(listint_t **head)
-{
-	listint_t *prev, *next;
-
-	prev = NULL;
-
-	while (*head != NULL)
-	{
-		next = (*head)->next;
-		(*head)->next = prev;
-		prev = *head;
-		*head = next;
-	}
-	*head = prev;
-
-	return (*head);
-}
-
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp = *head, *first_half = NULL, *sec_half = NULL, *temp2 = NULL;
-	int i, len;
+	listint_t *temp = *head;
+	unsigned int len = 0, i = 0;
+	int *data;
 
-	if (*head == NULL)
+	if (*head == NULL) /* empty list is palindrome */
 		return (1);
-	len = list_len(*head);
-	if (len == 1)
+
+	while (temp) /* find size of linked list */
+	{
+		temp = temp->next;
+		len++;
+	}
+	if (len == 1) /* single node list is palindrome */
 		return (1);
-	if (len % 2 != 0) /* if not even list */
-		return (0);
+
+	data = malloc(sizeof(int) * len);
 	temp = *head;
-	for (i = 1; i <= len; i++)
+
+	while (temp) /* add list to into array */
 	{
-		if (i <= len / 2) /* add the first half of the main list */
-			add_nodeint_end(&first_half, temp->n);
-		else /* add the sec half */
-			add_nodeint_end(&sec_half, temp->n);
+		data[i++] = temp->n;
 		temp = temp->next;
 	}
-	reverse_listint(&sec_half); /* reverse the sec list */
 
-	/* check if the first list equal the sec list */
-	temp = first_half;
-	temp2 = sec_half;
-	for (i = 0; i < list_len(first_half); i++)
+	for (i = 0; i <= (len / 2); i++)
 	{
-		if (temp->n != temp2->n)
+		if (data[i] != data[len - i - 1])
+		{
+			free(data);
 			return (0);
-		temp = temp->next;
-		temp2 = temp2->next;
+		}
 	}
-	free_listint(first_half);
-	free_listint(sec_half);
-
+	free(data);
 	return (1);
 }
