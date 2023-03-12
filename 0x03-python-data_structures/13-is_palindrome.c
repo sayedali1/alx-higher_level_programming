@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
 	unsigned int len = 0, i = 0;
-	int *data;
+	int data[10240];
 
 	if (head == NULL)
 		return (0);
@@ -24,9 +24,7 @@ int is_palindrome(listint_t **head)
 	if (len == 1) /* single node list is palindrome */
 		return (1);
 
-	data = malloc(sizeof(int) * len);
 	temp = *head;
-
 	while (temp) /* add list to into array */
 	{
 		data[i++] = temp->n;
@@ -36,11 +34,7 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i <= (len / 2); i++)
 	{
 		if (data[i] != data[len - i - 1])
-		{
-			free(data);
 			return (0);
-		}
 	}
-	free(data);
 	return (1);
 }
