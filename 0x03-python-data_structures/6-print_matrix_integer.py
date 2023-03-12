@@ -1,4 +1,5 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
+
 def print_matrix_integer(matrix=[[]]):
     for matrix_list in matrix:  # walk through each list
         # walk through each element in the list
@@ -8,5 +9,5 @@ def print_matrix_integer(matrix=[[]]):
                 space = ""
             else:
                 space = " "
-            print("{}".format(i), end=space)
-        print("")
+            print("{:d}".format(i), end=space)
+        print()
