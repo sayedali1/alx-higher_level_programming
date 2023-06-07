@@ -63,3 +63,11 @@ class Rectangle:
             return ""
         pic = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return pic
+
+    def __repr__(self):
+        """ canonical str """
+        return "Rectangle(" + str(self.__width) + ","
+        + str(self.__height) + ")"
+
+    def __del__(self):
+        print("Bye rectangle...")

@@ -14,10 +14,14 @@ class Rectangle:
         width (int): width
         height (int): height
     """
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """ Initializion"""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -61,5 +65,16 @@ class Rectangle:
         """ Prints rectangle  """
         if self.__width == 0 or self.__height == 0:
             return ""
-        pic = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        pic = "\n".join([str(self.print_symbol) * self.__width
+                        for rows in range(self.__height)])
         return pic
+
+    def __repr__(self):
+        """ canonical str """
+        return "Rectangle(" + str(self.__width) + "," +
+        str(self.__height) + ")"
+
+    def __del__(self):
+        """ calc bigger area """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")

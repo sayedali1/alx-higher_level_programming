@@ -1,32 +1,30 @@
 #!/usr/bin/python3
 """
-Module_3 rectangle
-Contains class Rectangle with private attributes,
-public area and perimeter methods, and allows printing #'s
+Module_1 rectangle
+Contains class Rectangle empty
 """
 
 
-class Rectangle:
+class Rectangle():
     """
-    Defines class rectangle with private attribute
-
-    Args:
-        width (int): width
-        height (int): height
+    Defines empty class rectangle
     """
     def __init__(self, width=0, height=0):
-        """ Initializion"""
+        """ Initializion  """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """ Getter """
+        """
+        Getter
+        return width
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Setter sets width"""
+        """ Setter """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -48,18 +46,12 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """ width * height """
+        """ calc the area """
         return self.__width * self.__height
 
     def perimeter(self):
-        """ Return perimeter """
-        if self.__width == 0 or self.__height == 0:
+        """ calc the perimeter """
+        if self.__height or self.__width != 0:
+            return 2*(self.height + self.width)
+        else:
             return 0
-        return (2 * self.__width) + (2 * self.height)
-
-    def __str__(self):
-        """ Prints rectangle  """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        pic = "\n".join(["#" * self.__width for rows in range(self.__height)])
-        return pic
