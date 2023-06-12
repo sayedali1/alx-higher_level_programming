@@ -6,5 +6,5 @@ check exactly an instance of the specified class
 
 
 def is_same_class(obj, a_class):
-
+    """ check an instace of the class """
     return type(obj) == a_class
