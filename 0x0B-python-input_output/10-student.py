@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+
+"""
+Module 10-student
+Contains class Student
+"""
+
+
 class Student():
     """
     Public Attributes:
