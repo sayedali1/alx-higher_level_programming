@@ -5,14 +5,12 @@ Contains class Student
 """
 
 
-class student():
+class Student():
     """
     Public Attributes:
         first_name
         last_name
         age
-    Public Methods:
-        to_json: retrieves its dictionary representation
     """
     def __init__(self, first_name, last_name, age):
         """Initializes student with full name and age"""
