@@ -8,5 +8,6 @@ function that returns the JSON representation
 
 
 def to_json_string(my_obj):
+    """ encoding """
     import json
     return(json.dumps(my_obj))
