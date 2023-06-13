@@ -20,7 +20,7 @@ class Student():
             return self.__dict__
         else:
             dictt = {}
-            for attr in attrs:
-                if attr in self.__dict__.keys():
-                    dictt[attr] = self.__dict__[attr]
+            for attrs in attrs:
+                if attrs in self.__dict__.keys():
+                    dictt[attrs] = self.__dict__[attrs]
             return dictt
