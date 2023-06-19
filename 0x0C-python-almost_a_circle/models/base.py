@@ -43,7 +43,7 @@ class Base():
     def from_json_string(json_string):
         """ load json from file """
         if json_string is None or len(json_string) == 0:
-            json_string = []
+            json_string = "[]"
         return json.loads(json_string)
 
     @classmethod
