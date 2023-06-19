@@ -17,7 +17,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """ str format """
-        return "[{:s}] ({:d}) {:d}/{:d} {:d}".format(
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
                 self.__class__.__name__,
                 self.id,
                 self.x,
