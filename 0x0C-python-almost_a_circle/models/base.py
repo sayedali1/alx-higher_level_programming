@@ -67,5 +67,5 @@ class Base():
             for i, dic in enumerate(instances):
                 listt.append(cls.create(**instances[i]))
         except:
-            return
+            pass
         return listt
