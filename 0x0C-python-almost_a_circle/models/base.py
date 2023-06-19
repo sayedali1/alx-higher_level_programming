@@ -23,7 +23,7 @@ class Base():
     @staticmethod
     def to_json_string(list_dictionaries):
         """ encode dic to json """
-        if list_dictionaries is None or len (list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
 
         return json.dumps(list_dictionaries)
@@ -66,6 +66,6 @@ class Base():
                 instances = cls.from_json_string(f.read())
             for i, dic in enumerate(instances):
                 listt.append(cls.create(**instances[i]))
-        except:
+        except Exception:
             pass
         return listt
