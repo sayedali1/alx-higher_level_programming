@@ -9,4 +9,3 @@ CREATE TABLE IF NOT EXISTS cities(
     FOREIGN KEY(state_id) REFERENCES states(id),
     name VARCHAR(256) NOT NULL
 );
-
