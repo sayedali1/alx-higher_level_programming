@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 return all state objects from database
-
+parameters given to script: username, password, database
 """
 
 import sys

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 return all cities from database
+parameters given to script: username, password, database
 """
 
 from sys import argv
