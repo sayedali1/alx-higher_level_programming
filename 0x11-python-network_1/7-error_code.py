@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-given URL & email as params display response 
+given URL & email as params display response
 """
 from sys import argv
 import requests
