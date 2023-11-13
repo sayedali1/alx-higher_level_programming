@@ -1,13 +1,9 @@
 #!/usr/bin/node
 
-if (process.argv.length <= 2) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  let maxNum = parseInt(process.argv[2], 10);
-  for (let i = 3; i < process.argv.length; i++) {
-    if (parseInt(process.argv[i], 10) > maxNum) {
-      maxNum = parseInt(process.argv[i], 10);
-    }
-  }
-  console.log(maxNum);
+  const arr = process.argv.slice(2).map(Number);
+
+  console.log(arr.sort(function (a, b) { return b - a; })[1]);
 }
