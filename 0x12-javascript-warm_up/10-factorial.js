@@ -9,6 +9,4 @@ function factorical (x) {
   }
 }
 
-const process = require('node:process');
-
 console.log(factorical(parseInt(process.argv[2], 10)));

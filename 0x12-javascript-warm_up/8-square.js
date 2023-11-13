@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-const process = require('node:process');
 const count = parseInt(process.argv[2], 10);
 
 if (count) {
