@@ -10,10 +10,10 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-session = sessionmaker(bind=engine)
-session = session()
-state =session.query(State).filter(State.name == (sys.argv[4],))
-if state is None:
-    print("Not found")
-else:
-  print(state[0].id)
+    session = sessionmaker(bind=engine)
+    session = session()
+    state =session.query(State).filter(State.name == (sys.argv[4],))
+    if state is None:
+        print("Not found")
+    else:
+        print(state[0].id)

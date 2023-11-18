@@ -10,17 +10,17 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-session = sessionmaker(bind=engine)
-session = session()
+    session = sessionmaker(bind=engine)
+    session = session()
 
-newState = State(
-    name = "Louisiana"
-)
-session.add(newState)
-session.commit()
+    newState = State(
+        name = "Louisiana"
+    )
+    session.add(newState)
+    session.commit()
 
-state =session.query(State).filter(State.name == "Louisiana")
-if state is None:
-    print("Not found")
-else:
-  print(state[0].id)
+    state =session.query(State).filter(State.name == "Louisiana")
+    if state is None:
+        print("Not found")
+    else:
+        print(state[0].id)
