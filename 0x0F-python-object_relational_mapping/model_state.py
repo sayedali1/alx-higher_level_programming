@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# create states table
+""" create states table """
 
 from sqlalchemy import INTEGER, Column, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
