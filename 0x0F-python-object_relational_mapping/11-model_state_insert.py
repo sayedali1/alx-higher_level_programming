@@ -17,7 +17,7 @@ if __name__ == "__main__":
     session = session()
 
     newState = State(
-        name = "Louisiana"
+        name="Louisiana"
     )
     session.add(newState)
     session.commit()
