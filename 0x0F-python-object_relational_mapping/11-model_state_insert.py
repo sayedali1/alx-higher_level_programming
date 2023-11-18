@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database 
+"""Start link class to table in database
 """
 import sys
 from model_state import Base, State
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session.add(newState)
     session.commit()
 
-    state =session.query(State).filter(State.name == "Louisiana")
+    state = session.query(State).filter(State.name == "Louisiana")
     if state is None:
         print("Not found")
     else:

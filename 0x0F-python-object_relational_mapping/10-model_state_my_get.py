@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database 
+"""Start link class to table in database
 """
 import sys
 from model_state import Base, State
@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     session = sessionmaker(bind=engine)
     session = session()
-    state =session.query(State).filter(State.name == (sys.argv[4],))
+    state = session.query(State).filter(State.name == (sys.argv[4],))
     if state is None:
         print("Not found")
     else:
