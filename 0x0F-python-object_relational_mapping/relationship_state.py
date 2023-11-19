@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """ create states table """
 
-from sqlalchemy import INTEGER, Column, String
+from sqlalchemy import INTEGER, Column, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from relationship_city import City, Base
 
-
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 class State(Base):
     """ State definition """
